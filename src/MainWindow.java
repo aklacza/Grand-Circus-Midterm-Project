@@ -5,6 +5,7 @@ import java.awt.Font;
 import javax.swing.JMenuBar;
 import javax.swing.JMenu;
 import javax.swing.JMenuItem;
+import javax.swing.JOptionPane;
 import javax.swing.JTextPane;
 import javax.swing.JLabel;
 import javax.swing.JComboBox;
@@ -27,9 +28,10 @@ public class MainWindow {
 	private JTextField textField;
 	Customer customer;
 	Order order ;
+	String name;
 	Purchase purchase;
 	
-	
+	String orderhistory;
 	/**
 	 * Launch the application.
 	 */
@@ -56,6 +58,7 @@ public class MainWindow {
 	/**
 	 * Initialize the contents of the frame.
 	 */
+	JTextArea textArea = new JTextArea();
 	private void initialize() {
 		frmGrandCircus = new JFrame();
 		frmGrandCircus.setFont(new Font("Dialog", Font.BOLD, 24));
@@ -142,13 +145,15 @@ public class MainWindow {
 		
 		
 		JButton btnAddToPurchase = new JButton("Add to purchase");
-		btnAddToPurchase.addKeyListener(new KeyAdapter() {
-			@Override
-			public void keyPressed(KeyEvent e) {
-				Order order =  new Order(customer,purchase);
-				order.toString();
+		btnAddToPurchase.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				order =  new Order(customer,purchase);
+				orderhistory=order.toString();
+				textArea.setText(orderhistory);
+				//JOptionPane.showMessageDialog(null, orderhistory);
 			}
 		});
+		
 		btnAddToPurchase.setBounds(77, 218, 161, 23);
 		frmGrandCircus.getContentPane().add(btnAddToPurchase);
 						
@@ -166,8 +171,7 @@ public class MainWindow {
 		txtpnSampleText.setBounds(248, 64, 161, 20);
 		frmGrandCircus.getContentPane().add(txtpnSampleText);
 	
-		
-		
+			
 		textField = new JTextField();
 		
 		textField.setBounds(77, 39, 161, 20);
@@ -177,9 +181,10 @@ public class MainWindow {
 		JButton btnAddCustomer = new JButton("Add customer");
 		btnAddCustomer.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				String name = textField.getText();
-				//Customer customer = new Customer(name, 0);
-				txtpnSampleText.setText(name);
+				name = textField.getText();
+				 customer = new Customer(name, 1);
+				//txtpnSampleText.setText(name);
+				// orderhistory = order.toString();
 			}
 		});
 		
@@ -195,15 +200,15 @@ public class MainWindow {
 		lblTotal.setBounds(10, 347, 46, 14);
 		frmGrandCircus.getContentPane().add(lblTotal);
 		
-		JTextArea textArea = new JTextArea();
 		
 		
-		//		textArea.append(order.toString());
-				
+		//textArea.setText(orderhistory);
+		
 			
-	
 		textArea.setBounds(32, 274, 387, 56);
 		frmGrandCircus.getContentPane().add(textArea);
+		
+		
 		
 		}
 }
