@@ -8,6 +8,10 @@ public class Purchase {
 		this.purchase = new ArrayList<Coffee>();
 		this.totalPurchase = 0;
 	}
+	
+	public double getTotalPurchase(){
+		return this.totalPurchase;
+	}
 
 	public ArrayList<Coffee> getPurchase() {
 		return purchase;

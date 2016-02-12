@@ -116,6 +116,7 @@ public class MainWindow {
 		frmGrandCircus.getContentPane().add(comboBox);
 		
 		JTextPane txtpnTestText = new JTextPane();
+		txtpnTestText.setText("1");
 		txtpnTestText.setEditable(false);
 		txtpnTestText.setBounds(77, 187, 161, 20);
 		frmGrandCircus.getContentPane().add(txtpnTestText);
@@ -137,17 +138,40 @@ public class MainWindow {
 		lblPrice.setBounds(21, 193, 46, 14);
 		frmGrandCircus.getContentPane().add(lblPrice);
 		
+		JTextArea txtrTesttext = new JTextArea();
+		txtrTesttext.setRows(3);
+		txtrTesttext.setBounds(32, 274, 387, 56);
+		frmGrandCircus.getContentPane().add(txtrTesttext);
 		
+		JTextPane txtpnSampleText = new JTextPane();
+		txtpnSampleText.setEditable(false);
+		txtpnSampleText.setBounds(248, 64, 161, 20);
+		frmGrandCircus.getContentPane().add(txtpnSampleText);
 		
-		
+		JTextPane textPane = new JTextPane();
+		textPane.setText("0");
+		textPane.setEditable(false);
+		textPane.setBounds(77, 341, 161, 20);
+		frmGrandCircus.getContentPane().add(textPane);
 		
 		JButton btnAddToPurchase = new JButton("Add to purchase");
-		btnAddToPurchase.addKeyListener(new KeyAdapter() {
-			@Override
-			public void keyPressed(KeyEvent e) {
-				Order order =  new Order(customer,purchase);
-				order.toString();
-			}
+		btnAddToPurchase.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				String size = (String) comboBox_1.getSelectedItem();
+				String flavor = (String) comboBox.getSelectedItem();
+				
+				//purchase.addCoffee(new Coffee(size, flavor, comboBox_1.getSelectedIndex()+1));
+				
+				txtrTesttext.append("Size: " + size + ", flavor: " + flavor + "\n");
+				
+				//String totalPurchase1 = Double.toString(purchase.getTotalPurchase());
+				int currentTotal = (int)Integer.valueOf(textPane.getText());
+				currentTotal+= comboBox_1.getSelectedIndex()+1;
+				String currentTotal1 = Integer.toString(currentTotal);
+				
+				textPane.setText(currentTotal1);
+				
+			} 
 		});
 		btnAddToPurchase.setBounds(77, 218, 161, 23);
 		frmGrandCircus.getContentPane().add(btnAddToPurchase);
@@ -160,16 +184,7 @@ public class MainWindow {
 		lblName.setBounds(10, 42, 46, 14);
 		frmGrandCircus.getContentPane().add(lblName);
 		
-		JTextPane txtpnSampleText = new JTextPane();
-		
-		txtpnSampleText.setEditable(false);
-		txtpnSampleText.setBounds(248, 64, 161, 20);
-		frmGrandCircus.getContentPane().add(txtpnSampleText);
-	
-		
-		
 		textField = new JTextField();
-		
 		textField.setBounds(77, 39, 161, 20);
 		frmGrandCircus.getContentPane().add(textField);
 		textField.setColumns(10);
@@ -186,24 +201,11 @@ public class MainWindow {
 		btnAddCustomer.setBounds(120, 61, 118, 23);
 		frmGrandCircus.getContentPane().add(btnAddCustomer);
 		
-		JTextPane textPane = new JTextPane();
-		textPane.setEditable(false);
-		textPane.setBounds(77, 341, 161, 20);
-		frmGrandCircus.getContentPane().add(textPane);
+		
 		
 		JLabel lblTotal = new JLabel("Total:");
 		lblTotal.setBounds(10, 347, 46, 14);
 		frmGrandCircus.getContentPane().add(lblTotal);
-		
-		JTextArea textArea = new JTextArea();
-		
-		
-		//		textArea.append(order.toString());
-				
-			
-	
-		textArea.setBounds(32, 274, 387, 56);
-		frmGrandCircus.getContentPane().add(textArea);
 		
 		}
 }
