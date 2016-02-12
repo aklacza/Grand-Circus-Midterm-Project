@@ -59,7 +59,9 @@ public class WelcomeScreen {
 			public void actionPerformed(ActionEvent arg0) {
 				
 				/// WELCOME SCREEN ENTER BUTTON
-				
+//				MainWindow mw = new MainWindow();
+//				mw.show();
+			
 			}
 		});
 		btnEnter.setBounds(144, 148, 115, 29);

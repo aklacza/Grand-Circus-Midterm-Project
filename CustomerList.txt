@@ -1,0 +1,73 @@
+Chris[]
+Total purchase: $0.0
+Chris[Coffee flavor: large, size: bold, price: $3.0
+, Coffee flavor: large, size: bold, price: $6.0
+, Coffee flavor: large, size: bold, price: $9.0
+]
+Total purchase: $18.0
+Grant
+Size: large, flavor: medium
+Size: large, flavor: medium
+
+Suzy
+Size: medium, flavor: medium
+Size: medium, flavor: medium
+
+
+Ray
+Size: large, flavor: medium 
+Size: large, flavor: medium 
+
+
+Jeb
+Size: medium, flavor: light 
+Size: medium, flavor: light 
+
+
+Casey
+Size: medium, flavor: light 
+Size: medium, flavor: light 
+Size: large, flavor: light 
+Size: large, flavor: light 
+
+
+Size: medium, flavor: medium 
+Size: medium, flavor: medium 
+
+
+Size: medium, flavor: medium 
+Size: medium, flavor: medium 
+Size: large, flavor: medium 
+
+
+Hector
+Size: large, flavor: medium 
+Size: large, flavor: medium 
+
+
+Sybil
+Sybil
+Size: large, flavor: bold 
+Size: large, flavor: bold 
+
+
+Elsie
+Elsie
+Size: medium, flavor: medium 
+Size: medium, flavor: medium 
+
+
+Yolanda
+[Coffee flavor: large, size: bold, price: $3.0
+, Coffee flavor: large, size: bold, price: $6.0
+]
+Total purchase: $9.0
+
+Claudius
+[Coffee flavor: large, size: medium, price: $3.0
+, Coffee flavor: large, size: medium, price: $6.0
+, Coffee flavor: large, size: medium, price: $9.0
+, Coffee flavor: large, size: medium, price: $12.0
+]
+Total purchase: $30.0
+
